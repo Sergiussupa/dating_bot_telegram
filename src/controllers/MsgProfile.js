@@ -7,7 +7,7 @@ class MsgProfile {
 		try {
             let flag;
             if (userState == 1) { // If the user is not authorized
-                this.bot.sendMessage(userId, 'Для исполнения этой команды тебе нужно закончить текущее заполнение до конца');
+                this.bot.sendMessage(userId, 'У тебя еще не до конца заполнен профиль');
                 flag = 0;
             } else { // If the user is aithrized
                 flag = 1;

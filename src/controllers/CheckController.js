@@ -8,7 +8,7 @@ class Check {
 		this.bot = bot;
 		this.DBCheck = new DBCheck();
         this.AuthDB = new DBAuth();
-        this.ProfileView = new ProfileView();
+        this.ProfileView = new ProfileView(bot);
 
 	}
     async delete(userId) {
@@ -43,13 +43,8 @@ class Check {
             } else {
                 this.bot.sendMessage(userId, 'Выбери цифру:\n1: Лайк\n 2: НеНеНеЛайк');
                 await this.DBCheck.updateAtr(userId, 'idx', res2.id);
-                let result3 = await this.ProfileView.test(res2.checkId);
-                this.bot.sendPhoto(userId, result3[0], {caption: result3[1]});
+                this.ProfileView.test(userId, res2.checkId);
             }
-                
-                //console.log(res2);
-            //}
-            //console.log(result);
         } catch (error) {
             console.log(error);
         }
