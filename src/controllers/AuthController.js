@@ -61,7 +61,7 @@ class AuthController {
 												 '\nЕсли хочешь посмотреть, как он выглядит, введи /profile\n' +
 												 'Если хочешь заполнить его заного, введи /clear' +
 												 '\nВведи цифру 1, дабы посмотреть на других', [['1']]);
-					await this.AuthDB.updateAtrProfile(userId, 'photo_url', 'images/index.jpeg');
+					await this.AuthDB.updateAtrProfile(userId, 'photo_url', 'images/index.jpg');
 					await this.AuthDB.updateAtrProfile(userId, 'profileState', 6);
 					flag = 1;
 				} else if (photo == undefined) {
