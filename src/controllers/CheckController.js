@@ -39,9 +39,9 @@ class Check {
 
             let res2 = await this.DBCheck.all(userId, result.gender, result.idx);
             if (res2 == undefined) {
-                this.bot.sendMessage(userId, 'Ты посмотрел уже все профили, посмотри немного, пока тебя кто то лайкнет в ответ');
+                this.bot.send(userId, 'Ты посмотрел уже все профили, посмотри немного, пока тебя кто то лайкнет в ответ');
             } else {
-                this.bot.sendMessage(userId, 'Выбери цифру:\n1: Лайк\n 2: НеНеНеЛайк');
+                this.bot.send(userId, 'Выбери цифру:\n1: Лайк\n 2: НеНеНеЛайк', [['1', '2']]);
                 await this.DBCheck.updateAtr(userId, 'idx', res2.id);
                 this.ProfileView.test(userId, res2.checkId);
             }

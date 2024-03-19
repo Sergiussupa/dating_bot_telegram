@@ -37,6 +37,9 @@ class BotService {
 		console.log(msg);
 		// Логика обработки сообщений
 		this.MsgController.getMsg(msg);
+		//this.bot.sendMessage(msg.from.id, msg.text, this.addKeyboard(['3', '2'], ['4']));
+		//this.bot.send(msg.from.id, msg.text, [['1', '4'], ['loh', 'io'], ['poh']]);
+
 	}
 
 	async handlePhoto(msg) {
